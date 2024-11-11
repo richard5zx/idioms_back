@@ -31,7 +31,7 @@ Enter todolist database
 mysql> USE idiom
 ```
 
-Create task table in the database todolist database
+Create idiom and idiom_example table in the database todolist database
 ```script
 mysql> CREATE TABLE idiom (
     idiom_id int NOT NULL AUTO_INCREMENT,
@@ -42,7 +42,7 @@ mysql> CREATE TABLE idiom (
     PRIMARY KEY (task_id)
 );
 
-mysql> CREATE TABLE example (
+mysql> CREATE TABLE idiom_example (
     example_id int NOT NULL AUTO_INCREMENT,
     idiom_id,
     example varchar(255),
@@ -55,7 +55,7 @@ mysql> CREATE TABLE example (
 Check details of table
 ```script
 mysql> DESCRIBE idiom;
-mysql> DESCRIBE example;
+mysql> DESCRIBE idiom_example;
 ```
 
 
