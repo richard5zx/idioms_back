@@ -44,7 +44,7 @@ mysql> CREATE TABLE idiom (
 
 mysql> CREATE TABLE idiom_example (
     example_id int NOT NULL AUTO_INCREMENT,
-    idiom_id,
+    idiom_id int,
     example varchar(255),
     date_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (example_id),
