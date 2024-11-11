@@ -31,7 +31,7 @@ Enter todolist database
 mysql> USE idiom
 ```
 
-Create idiom and idiom_example table in the database todolist database
+Create idiom and idiom_example table in the idiom database
 ```script
 mysql> CREATE TABLE idiom (
     idiom_id int NOT NULL AUTO_INCREMENT,
@@ -41,7 +41,10 @@ mysql> CREATE TABLE idiom (
     date_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (idiom_id)
 );
+```
 
+Create idiom_example table in the idiom database
+```script
 mysql> CREATE TABLE idiom_example (
     example_id int NOT NULL AUTO_INCREMENT,
     idiom_id int,
