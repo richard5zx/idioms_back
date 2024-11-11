@@ -39,7 +39,7 @@ mysql> CREATE TABLE idiom (
     definition varchar(255),
     language varchar(100),
     date_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    PRIMARY KEY (task_id)
+    PRIMARY KEY (idiom_id)
 );
 
 mysql> CREATE TABLE idiom_example (
