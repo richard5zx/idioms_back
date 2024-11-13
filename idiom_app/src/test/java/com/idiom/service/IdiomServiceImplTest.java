@@ -17,8 +17,9 @@ public class IdiomServiceImplTest {
 	
 	// C
 	@Test
-	public void addIdiomTest(Idiom idiom) {
-		
+	public void addIdiomTest() {
+		Idiom idiom1 = new Idiom("idiom", "idiom2def", "chn");
+		idiomServiceImpl.addIdiom(idiom1);
 	}
 	
 	// R

@@ -2,6 +2,8 @@ package com.idiom.model;
 
 import java.sql.Timestamp;
 
+import org.hibernate.annotations.CreationTimestamp;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -19,14 +21,14 @@ public class IdiomExample {
 	private String idiom;
 	private String definition;
 	private String language;
+	@CreationTimestamp
 	private Timestamp date_time;
 	
-	public IdiomExample(String idiom, String definition, String language, Timestamp date_time) {
+	public IdiomExample(String idiom, String definition, String language) {
 		super();
 		this.idiom = idiom;
 		this.definition = definition;
 		this.language = language;
-		this.date_time = date_time;
 	}
 	
 	public IdiomExample() {
