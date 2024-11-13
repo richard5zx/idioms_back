@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.idiom.model.Idiom;
 
-public interface IdiomDao extends JpaRepository<Idiom, Integer>{
+public interface IdiomRepository extends JpaRepository<Idiom, Integer>{
 	List<Idiom> findById(int idiom_id);
+	List<Idiom> findByLanguage(String language);
 }

@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.idiom.model.IdiomExample;
 
-public interface IdiomExampleDao extends JpaRepository<IdiomExample, Integer> {
+public interface IdiomExampleRepository extends JpaRepository<IdiomExample, Integer> {
 	
 	List<IdiomExample> findById(int example_id);
 	

@@ -6,30 +6,30 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.idiom.dao.IdiomDao;
+import com.idiom.dao.IdiomRepository;
 import com.idiom.model.Idiom;
 import com.idiom.service.IdiomService;
 
 @Service
 public class IdiomServiceImpl implements IdiomService {
 	@Autowired
-	IdiomDao idiomDao;
+	IdiomRepository idiomRepsitory;
 	
 	// C
 	@Override
 	public void addIdiom(Idiom idiom) {
-		idiomDao.save(idiom);	
+		idiomRepsitory.save(idiom);	
 	}
 
 	// R
 	@Override
 	public List<Idiom> findAllIdiom() {
-		return idiomDao.findAll();
+		return idiomRepsitory.findAll();
 	}
 
 	@Override
 	public List<Idiom> findIdiomById(int idiom_id) {
-		return idiomDao.findById(idiom_id);
+		return idiomRepsitory.findById(idiom_id);
 	}
 
 	@Override // ToDo
@@ -40,8 +40,7 @@ public class IdiomServiceImpl implements IdiomService {
 
 	@Override // ToDo
 	public List<Idiom> findIdiomByLanguage(String language) {
-		// TODO Auto-generated method stub
-		return null;
+		return idiomRepsitory.findByLanguage(language);
 	}
 
 	@Override  // ToDo
@@ -53,14 +52,14 @@ public class IdiomServiceImpl implements IdiomService {
 	// U
 	@Override
 	public void updateIdiom(Idiom idiom) {
-		idiomDao.save(idiom);
+		idiomRepsitory.save(idiom);
 		
 	}
 	
 	// D
 	@Override
 	public void deleteIdiom(int idiom_id) {
-		idiomDao.deleteById(idiom_id);
+		idiomRepsitory.deleteById(idiom_id);
 		
 	}
 }

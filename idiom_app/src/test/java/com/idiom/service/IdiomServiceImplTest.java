@@ -49,6 +49,7 @@ public class IdiomServiceImplTest {
 	
 	@Test // ToDo
 	public void findIdiomByLanguageTest() {
+		idiomServiceImpl.findIdiomByLanguage("eng");
 		
 	}
 	
