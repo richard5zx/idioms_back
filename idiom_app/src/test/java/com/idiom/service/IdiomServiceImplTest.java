@@ -47,9 +47,12 @@ public class IdiomServiceImplTest {
 		
 	}
 	
-	@Test // ToDo
+	@Test
 	public void findIdiomByLanguageTest() {
-		idiomServiceImpl.findIdiomByLanguage("eng");
+		List<Idiom> list = idiomServiceImpl.findIdiomByLanguage("chn");
+		Idiom idiom = list.get(0);
+		System.out.println("idiom_id:" + idiom.getIdiom_id() + "\tidiom:"+idiom.getIdiom() + "\tdefi:"+idiom.getDefinition()
+		   + "\tlang:"+idiom.getLanguage() + "\tdate:"+idiom.getDate_time());
 		
 	}
 	
@@ -70,7 +73,7 @@ public class IdiomServiceImplTest {
 	}
 	
 	// D
-	@Test
+	//@Test
 	public void deleteIdiomTest() {
 		idiomServiceImpl.deleteIdiom(3);
 	}

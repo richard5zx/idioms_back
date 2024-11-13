@@ -38,7 +38,7 @@ public class IdiomServiceImpl implements IdiomService {
 		return null;
 	}
 
-	@Override // ToDo
+	@Override
 	public List<Idiom> findIdiomByLanguage(String language) {
 		return idiomRepsitory.findByLanguage(language);
 	}
