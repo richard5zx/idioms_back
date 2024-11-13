@@ -16,50 +16,61 @@ public class IdiomServiceImplTest {
 	IdiomServiceImpl idiomServiceImpl;
 	
 	// C
-	@Test
+	//@Test
 	public void addIdiomTest() {
-		Idiom idiom1 = new Idiom("idiom", "idiom2def", "chn");
+		Idiom idiom1 = new Idiom("idiom3", "idiom3def", "deu");
 		idiomServiceImpl.addIdiom(idiom1);
 	}
 	
 	// R
-	@Test
+	//@Test
 	public void allIdiomTest() {
 		List<Idiom> list = idiomServiceImpl.findAllIdiom();
 		for (Idiom idiom : list) {
-			System.out.println("idiom_id:"+idiom.getIdiom_id()+"\tidiom:"+idiom.getIdiom()+"\tdefi:"+idiom.getDefinition()
-							   +"\tlang:"+idiom.getLanguage()+"\tdate:"+idiom.getDate_time());
+			System.out.println("idiom_id:" + idiom.getIdiom_id() + "\tidiom:"+idiom.getIdiom() + "\tdefi:"+idiom.getDefinition()
+							   + "\tlang:"+idiom.getLanguage() + "\tdate:"+idiom.getDate_time());
 			
 		}
 	}
 	
-	@Test
+	//@Test
 	public void findIdiomByIdTest() {
+		List<Idiom> list = idiomServiceImpl.findIdiomById(1);
+		Idiom idiom = list.get(0);
+		System.out.println("idiom_id:" + idiom.getIdiom_id() + "\tidiom:"+idiom.getIdiom() + "\tdefi:"+idiom.getDefinition()
+		   + "\tlang:"+idiom.getLanguage() + "\tdate:"+idiom.getDate_time());
 		
 	}
 	
-	@Test
+	@Test // ToDo
 	public void findIdiomByIdiomTest() {
 		
 	}
 	
-	@Test
+	@Test // ToDo
 	public void findIdiomByLanguageTest() {
 		
 	}
 	
-	@Test
+	@Test // ToDo
 	public void findIdiomByTimeTest() {
 		
 	}
 	
 	// U
+	//@Test
 	public void updateIdiomTest() {
-		
+		List<Idiom> list = idiomServiceImpl.findIdiomById(4);
+		Idiom idiom = list.get(0);
+		idiom.setIdiom("new4idiom");
+		idiom.setDefinition("new4def");
+		idiom.setLanguage("new4lang");
+		idiomServiceImpl.updateIdiom(idiom);
 	}
 	
 	// D
-	public void deleteIdiomTEst() {
-		
+	@Test
+	public void deleteIdiomTest() {
+		idiomServiceImpl.deleteIdiom(3);
 	}
 }

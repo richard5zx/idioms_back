@@ -32,12 +32,12 @@ public class IdiomExampleServiceImplTest {
 		
 	}
 	
-	@Test
+	@Test // ToDo
 	public void findByExampleTest() {
 		
 	}
 	
-	@Test
+	@Test // ToDo
 	public void findExampleByTimeTest() {
 		
 	}
