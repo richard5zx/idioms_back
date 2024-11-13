@@ -25,7 +25,12 @@ public class IdiomServiceImplTest {
 	// R
 	@Test
 	public void allIdiomTest() {
-		
+		List<Idiom> list = idiomServiceImpl.findAllIdiom();
+		for (Idiom idiom : list) {
+			System.out.println("idiom_id:"+idiom.getIdiom_id()+"\tidiom:"+idiom.getIdiom()+"\tdefi:"+idiom.getDefinition()
+							   +"\tlang:"+idiom.getLanguage()+"\tdate:"+idiom.getDate_time());
+			
+		}
 	}
 	
 	@Test

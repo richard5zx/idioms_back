@@ -23,7 +23,7 @@ public class IdiomServiceImpl implements IdiomService {
 
 	// R
 	@Override
-	public List<Idiom> allIdiom() {
+	public List<Idiom> findAllIdiom() {
 		return idiomDao.findAll();
 	}
 

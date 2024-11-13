@@ -11,7 +11,7 @@ public interface IdiomExampleService {
 	public void addIdiomExample(IdiomExample idiomExample);
 	
 	// R
-	public List<IdiomExample> findAll();
+	public List<IdiomExample> findAllIdiomExample();
 	public List<IdiomExample> findByExampleId(int example_id);
 	public List<IdiomExample> findByExample(String example);
 	public List<IdiomExample> findExampleByTime(Timestamp date_time);

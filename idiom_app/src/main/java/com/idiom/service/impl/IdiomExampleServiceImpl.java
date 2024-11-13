@@ -24,7 +24,7 @@ public class IdiomExampleServiceImpl implements IdiomExampleService {
 
 	// R
 	@Override
-	public List<IdiomExample> findAll() {
+	public List<IdiomExample> findAllIdiomExample() {
 		return idiomExampleDao.findAll();
 	}
 	

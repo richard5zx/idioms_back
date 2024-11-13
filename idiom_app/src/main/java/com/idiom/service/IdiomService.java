@@ -10,7 +10,7 @@ public interface IdiomService {
 	public void addIdiom(Idiom idiom);
 	
 	// R
-	public List<Idiom> allIdiom();
+	public List<Idiom> findAllIdiom();
 	public List<Idiom> findIdiomById(int idiom_id);
 	public List<Idiom> findIdiomByIdiom(String word);
 	public List<Idiom> findIdiomByLanguage(String language);
