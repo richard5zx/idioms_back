@@ -28,8 +28,8 @@ public class IdiomServiceImpl implements IdiomService {
 	}
 
 	@Override
-	public List<Idiom> findIdiomById(int idiom_id) {
-		return idiomRepository.findById(idiom_id);
+	public List<Idiom> findIdiomById(int idiomId) {
+		return idiomRepository.findById(idiomId);
 	}
 
 	@Override
@@ -51,13 +51,12 @@ public class IdiomServiceImpl implements IdiomService {
 	@Override
 	public void updateIdiom(Idiom idiom) {
 		idiomRepository.save(idiom);
-		
 	}
 	
 	// D
 	@Override
-	public void deleteIdiom(int idiom_id) {
-		idiomRepository.deleteById(idiom_id);
+	public void deleteIdiom(int idiomId) {
+		idiomRepository.deleteById(idiomId);
 		
 	}
 }

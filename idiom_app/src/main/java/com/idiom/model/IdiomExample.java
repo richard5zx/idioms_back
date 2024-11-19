@@ -18,21 +18,22 @@ import lombok.Data;
 public class IdiomExample {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Integer example_id;
+	@Column(name="example_id")
+	private Integer exampleId;
 	
 	@Column(name="idiom_id")
-	private Integer idiom_id;
+	private Integer idiomId;
 	
 	@Column(name="example")
 	private String example;
 	
 	@Column(name="date_time")
 	@CreationTimestamp
-	private Timestamp date_time;
+	private Timestamp dateTime;
 
-	public IdiomExample(Integer idiom_id, String example) {
+	public IdiomExample(Integer idiomId, String example) {
 		super();
-		this.idiom_id = idiom_id;
+		this.idiomId = idiomId;
 		this.example = example;
 	}
 	

@@ -16,20 +16,28 @@ public class IdiomExampleServiceImplTest {
 	IdiomExampleServiceImpl idiomExampleServiceImpl;
 	
 	// C
-	@Test
+	//@Test
 	public void addIdiomExampleTest() {
 		IdiomExample idiomExample = new IdiomExample(4, "Some idiom");
 		idiomExampleServiceImpl.addIdiomExample(idiomExample);
 	}
 	
 	// R
+	//@Test
 	public void findAllTest() {
-		
+		List<IdiomExample> list= idiomExampleServiceImpl.findAllIdiomExample();
+		for (IdiomExample idiomExample : list) {
+			System.out.println("example_id:" + idiomExample.getExampleId() + "\tidiom_id:"+idiomExample.getIdiomId() + "\texample:"+idiomExample.getExample()
+			   + "\ttime:"+idiomExample.getDateTime());
+		}
 	}
 	
-	@Test
+	//@Test
 	public void findByExampleIdTest() {
-		
+		List<IdiomExample> list= idiomExampleServiceImpl.findIdiomExampleByExampleId(1);
+		IdiomExample idiomExample = list.get(0);
+		System.out.println("example_id:" + idiomExample.getExampleId() + "\tidiom_id:"+idiomExample.getIdiomId() + "\texample:"+idiomExample.getExample()
+		   					+ "\ttime:"+idiomExample.getDateTime());
 	}
 	
 	@Test // ToDo

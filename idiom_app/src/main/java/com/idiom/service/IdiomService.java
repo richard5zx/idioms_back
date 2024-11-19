@@ -11,7 +11,7 @@ public interface IdiomService {
 	
 	// R
 	public List<Idiom> findAllIdiom();
-	public List<Idiom> findIdiomById(int idiom_id);
+	public List<Idiom> findIdiomById(int idiomId);
 	public List<Idiom> findIdiomByIdiom(String word);
 	public List<Idiom> findIdiomByLanguage(String language);
 	public List<Idiom> findIdiomByTime(Timestamp dateTimeStart, Timestamp dateTimeEnd);
@@ -20,5 +20,5 @@ public interface IdiomService {
 	public void updateIdiom(Idiom idiom);
 	
 	// D
-	public void deleteIdiom(int idiom_id);
+	public void deleteIdiom(int idiomId);
 }

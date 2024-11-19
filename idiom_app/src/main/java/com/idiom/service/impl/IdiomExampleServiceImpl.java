@@ -28,10 +28,20 @@ public class IdiomExampleServiceImpl implements IdiomExampleService {
 	}
 	
 	@Override
-	public List<IdiomExample> findIdiomExampleByExampleId(int example_id) {
-		return idiomExampleRepository.findById(example_id);
+	public List<IdiomExample> findIdiomExampleByExampleId(int exampleId) {
+		return idiomExampleRepository.findById(exampleId);
 	}
 
+	@Override
+	public List<IdiomExample> findIdiomExampleByExample(String example) {
+		return idiomExampleRepository.findExampleByExample(example);
+	}
+	
+	@Override
+	public List<IdiomExample> findIdiomExampleExampleByTime(Timestamp dateTimeStart, Timestamp dateTimeEnd) {
+		return idiomExampleRepository.findExampleByTime(dateTimeStart, dateTimeEnd);
+	}
+	
 	// U
 	@Override
 	public void updateIdiomExample(IdiomExample idiomExample) {
@@ -39,22 +49,11 @@ public class IdiomExampleServiceImpl implements IdiomExampleService {
 		
 	}
 
-	@Override
-	public List<IdiomExample> findIdiomExampleByExample(String example) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
-	@Override
-	public List<IdiomExample> findIdiomExampleExampleByTime(Timestamp date_time) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 	
 	// D
 	@Override
-	public void deleteIdiomExample(int example_id) {
-		idiomExampleRepository.deleteById(example_id);
+	public void deleteIdiomExample(int exampleId) {
+		idiomExampleRepository.deleteById(exampleId);
 		
 	}
 

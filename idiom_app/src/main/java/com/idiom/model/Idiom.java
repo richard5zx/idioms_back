@@ -17,7 +17,8 @@ import lombok.Data;
 public class Idiom {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Integer idiom_id;
+	@Column(name="idiom_id")
+	private Integer idiomId;
 	
 	@Column(name="idiom")
 	private String idiom;
@@ -30,7 +31,7 @@ public class Idiom {
 	
 	@Column(name="date_time")
 	@CreationTimestamp
-	private Timestamp date_time;
+	private Timestamp dateTime;
 	
 	public Idiom(String idiom, String definition, String language) {
 		super();

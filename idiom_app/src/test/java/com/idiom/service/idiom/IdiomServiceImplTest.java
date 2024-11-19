@@ -26,8 +26,8 @@ public class IdiomServiceImplTest {
 	public void allIdiomTest() {
 		List<Idiom> list = idiomServiceImpl.findAllIdiom();
 		for (Idiom idiom : list) {
-			System.out.println("idiom_id:" + idiom.getIdiom_id() + "\tidiom:"+idiom.getIdiom() + "\tdefi:"+idiom.getDefinition()
-							   + "\tlang:"+idiom.getLanguage() + "\tdate:"+idiom.getDate_time());
+			System.out.println("idiom_id:" + idiom.getIdiomId() + "\tidiom:"+idiom.getIdiom() + "\tdefi:"+idiom.getDefinition()
+							   + "\tlang:"+idiom.getLanguage() + "\tdate:"+idiom.getDateTime());
 			
 		}
 	}
@@ -36,34 +36,34 @@ public class IdiomServiceImplTest {
 	public void findIdiomByIdTest() {
 		List<Idiom> list = idiomServiceImpl.findIdiomById(1);
 		Idiom idiom = list.get(0);
-		System.out.println("idiom_id:" + idiom.getIdiom_id() + "\tidiom:"+idiom.getIdiom() + "\tdefi:"+idiom.getDefinition()
-		   + "\tlang:"+idiom.getLanguage() + "\tdate:"+idiom.getDate_time());
+		System.out.println("idiom_id:" + idiom.getIdiomId() + "\tidiom:"+idiom.getIdiom() + "\tdefi:"+idiom.getDefinition()
+		   + "\tlang:"+idiom.getLanguage() + "\tdate:"+idiom.getDateTime());
 		
 	}
 	
-	@Test
+	//@Test
 	public void findIdiomByLanguageTest() {
 		List<Idiom> list = idiomServiceImpl.findIdiomByLanguage("chn");
 		Idiom idiom = list.get(0);
-		System.out.println("idiom_id:" + idiom.getIdiom_id() + "\tidiom:"+idiom.getIdiom() + "\tdefi:"+idiom.getDefinition()
-		   + "\tlang:"+idiom.getLanguage() + "\tdate:"+idiom.getDate_time());
+		System.out.println("idiom_id:" + idiom.getIdiomId() + "\tidiom:"+idiom.getIdiom() + "\tdefi:"+idiom.getDefinition()
+		   + "\tlang:"+idiom.getLanguage() + "\tdate:"+idiom.getDateTime());
 		
 	}
 	
 	// U
 	//@Test
 	public void updateIdiomTest() {
-		List<Idiom> list = idiomServiceImpl.findIdiomById(4);
+		List<Idiom> list = idiomServiceImpl.findIdiomById(5);
 		Idiom idiom = list.get(0);
-		idiom.setIdiom("new4idiom");
-		idiom.setDefinition("new4def");
-		idiom.setLanguage("new4lang");
+		idiom.setIdiom("5");
+		idiom.setDefinition("number5");
+		idiom.setLanguage("new5lang");
 		idiomServiceImpl.updateIdiom(idiom);
 	}
 	
 	// D
 	//@Test
 	public void deleteIdiomTest() {
-		idiomServiceImpl.deleteIdiom(3);
+		idiomServiceImpl.deleteIdiom(5);
 	}
 }

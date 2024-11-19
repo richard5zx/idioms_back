@@ -11,13 +11,13 @@ public interface IdiomExampleService {
 	
 	// R
 	public List<IdiomExample> findAllIdiomExample();
-	public List<IdiomExample> findIdiomExampleByExampleId(int example_id);
+	public List<IdiomExample> findIdiomExampleByExampleId(int exampleId);
 	public List<IdiomExample> findIdiomExampleByExample(String example);
-	public List<IdiomExample> findIdiomExampleExampleByTime(Timestamp date_time);
+	public List<IdiomExample> findIdiomExampleExampleByTime(Timestamp dateTimeStart, Timestamp dateTimeEnd);
 	
 	// U
 	public void updateIdiomExample(IdiomExample idiomExample);
 	
 	// D
-	public void deleteIdiomExample(int example_id);
+	public void deleteIdiomExample(int exampleId);
 }

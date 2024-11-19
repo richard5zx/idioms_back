@@ -1,10 +1,14 @@
 package com.idiom.dao.idiomExample;
 
+import java.sql.Timestamp;
+import java.util.List;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import com.idiom.dao.IdiomExampleRepository;
+import com.idiom.model.IdiomExample;
 
 @SpringBootTest
 public class idiomExampleRepositoryTest {
@@ -13,12 +17,21 @@ public class idiomExampleRepositoryTest {
 	IdiomExampleRepository idiomExampleRepository;
 	
 	// C
-	@Test
-	public void testTest( ) {
-		System.out.println("Test");
-	}
 	
 	// R
+	//@Test
+	public void findExampleByExampleTest( ) {
+		List<IdiomExample> list = idiomExampleRepository.findExampleByExample("m");
+		System.out.println(list.size());
+	}
+	
+	//@Test
+	public void findExampleByTimeTest( ) {
+		Timestamp timeStart = Timestamp.valueOf("2024-11-19 17:03:02");
+		Timestamp timeEnd = Timestamp.valueOf("2024-11-19 17:10:44");
+		List<IdiomExample> list = idiomExampleRepository.findExampleByTime(timeStart, timeEnd);
+		System.out.println(list.size());
+	}
 	
 	// U
 	
