@@ -49,8 +49,14 @@ public class IdiomServiceImpl implements IdiomService {
 
 	// U
 	@Override
-	public void updateIdiom(Idiom idiom) {
-		idiomRepository.save(idiom);
+	public void updateIdiom(int idiomId, String idiom, String definition, String language) {
+		List<Idiom> list = idiomRepository.findById(idiomId);
+		Idiom idiomObject = list.get(0);
+		idiomObject.setIdiom(idiom);
+		idiomObject.setDefinition(definition);
+		idiomObject.setLanguage(language);
+		
+		idiomRepository.save(idiomObject);
 	}
 	
 	// D
@@ -59,4 +65,5 @@ public class IdiomServiceImpl implements IdiomService {
 		idiomRepository.deleteById(idiomId);
 		
 	}
+
 }

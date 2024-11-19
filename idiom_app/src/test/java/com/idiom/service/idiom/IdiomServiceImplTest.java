@@ -47,18 +47,13 @@ public class IdiomServiceImplTest {
 		Idiom idiom = list.get(0);
 		System.out.println("idiom_id:" + idiom.getIdiomId() + "\tidiom:"+idiom.getIdiom() + "\tdefi:"+idiom.getDefinition()
 		   + "\tlang:"+idiom.getLanguage() + "\tdate:"+idiom.getDateTime());
-		
+
 	}
 	
 	// U
-	//@Test
+	@Test
 	public void updateIdiomTest() {
-		List<Idiom> list = idiomServiceImpl.findIdiomById(5);
-		Idiom idiom = list.get(0);
-		idiom.setIdiom("5");
-		idiom.setDefinition("number5");
-		idiom.setLanguage("new5lang");
-		idiomServiceImpl.updateIdiom(idiom);
+		idiomServiceImpl.updateIdiom(1,"TestIdi", "TestDef", "TestLan");
 	}
 	
 	// D

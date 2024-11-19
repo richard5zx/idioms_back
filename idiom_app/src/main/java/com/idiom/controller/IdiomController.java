@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.idiom.model.Idiom;
+import com.idiom.service.impl.IdiomExampleServiceImpl;
 import com.idiom.service.impl.IdiomServiceImpl;
 
 @RestController
@@ -23,10 +24,13 @@ public class IdiomController {
 	@Autowired
 	IdiomServiceImpl idiomServiceImpl;
 	
+	@Autowired
+	IdiomExampleServiceImpl idiomExampleServiceImpl;
+	
 	// C
 	@PostMapping("createIdiom")
 	public String createIdiom(@RequestBody Idiom idiom) {
-		idiomServiceImpl.addIdiom(null);
+		idiomServiceImpl.addIdiom(idiom);
 		return "Idiom Added";
 	}
 	
@@ -39,13 +43,18 @@ public class IdiomController {
 	// U
 	@PutMapping("updateIdiom")
 	public String updateIdiom(@RequestBody Idiom idiom) {
-		idiomServiceImpl.updateIdiom(idiom);
+		System.out.println(idiom.getLanguage());
+		System.out.println(idiom.getDefinition());
+		System.out.println(idiom.getIdiom());
+		System.out.println(idiom.getIdiomId());
+		idiomServiceImpl.updateIdiom(idiom.getIdiomId(), idiom.getIdiom(), idiom.getDefinition(), idiom.getLanguage());
 		return "Idiom Updated";
 	}
 	
 	// D
 	@DeleteMapping("deleteIdiom/{idiomId}")
 	public String deleteIdiom(@PathVariable("idiomId") int idiomId) {
+		idiomExampleServiceImpl.deleteAllbyIdiomId(idiomId);
 		idiomServiceImpl.deleteIdiom(idiomId);
 		return "Idiom Deleted";
 		

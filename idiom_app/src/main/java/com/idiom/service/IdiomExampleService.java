@@ -16,8 +16,10 @@ public interface IdiomExampleService {
 	public List<IdiomExample> findIdiomExampleExampleByTime(Timestamp dateTimeStart, Timestamp dateTimeEnd);
 	
 	// U
-	public void updateIdiomExample(IdiomExample idiomExample);
+	public void updateIdiomExample(int exampleId, String example);
 	
 	// D
 	public void deleteIdiomExample(int exampleId);
+	public void deleteAllbyIdiomId(int id);
+	
 }

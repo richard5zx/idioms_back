@@ -38,8 +38,8 @@ public class IdiomExampleController {
 	
 	// U
 	@PutMapping("updateIdiomExample")
-	public String updateIdiom(@RequestBody IdiomExample IdiomExample) {
-		idiomExampleServiceImpl.updateIdiomExample(IdiomExample);
+	public String updateIdiom(@RequestBody IdiomExample idiomExample) {
+		idiomExampleServiceImpl.updateIdiomExample(idiomExample.getExampleId(), idiomExample.getExample());
 		return "Example Update";
 	}
 	

@@ -6,7 +6,6 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.idiom.model.Idiom;
 import com.idiom.model.IdiomExample;
 import com.idiom.service.impl.IdiomExampleServiceImpl;
 
@@ -40,25 +39,12 @@ public class IdiomExampleServiceImplTest {
 		   					+ "\ttime:"+idiomExample.getDateTime());
 	}
 	
-	@Test // ToDo
-	public void findByExampleTest() {
-		
-	}
-	
-	@Test // ToDo
-	public void findExampleByTimeTest() {
-		
-	}
-	
 	// U
 	//@Test
 	public void updateIdiomExampleTest() {
-		List<IdiomExample> list= idiomExampleServiceImpl.findIdiomExampleByExampleId(1);
-		IdiomExample idiomExample = list.get(0);
-		idiomExample.setExample("newExample");
-		idiomExampleServiceImpl.updateIdiomExample(idiomExample);
+		idiomExampleServiceImpl.updateIdiomExample(1, "testExa");
 	}
-	
+
 	// D
 	//@Test
 	public void deleteIdiomExampleTest() {

@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.idiom.dao.IdiomExampleRepository;
 import com.idiom.model.IdiomExample;
@@ -44,16 +45,24 @@ public class IdiomExampleServiceImpl implements IdiomExampleService {
 	
 	// U
 	@Override
-	public void updateIdiomExample(IdiomExample idiomExample) {
-		idiomExampleRepository.save(idiomExample);
+	public void updateIdiomExample(int exampleId, String example) {
+		List<IdiomExample> list = idiomExampleRepository.findById(exampleId);
+		IdiomExample exampleObject = list.get(0);
+		exampleObject.setExample(example);
+		idiomExampleRepository.save(exampleObject);
 		
 	}
 
-	
 	// D
 	@Override
 	public void deleteIdiomExample(int exampleId) {
 		idiomExampleRepository.deleteById(exampleId);
+		
+	}
+
+	@Override
+	public void deleteAllbyIdiomId(int idiomId) {
+		idiomExampleRepository.deleteAllByIdiomId(idiomId);
 		
 	}
 

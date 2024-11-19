@@ -17,7 +17,7 @@ public interface IdiomService {
 	public List<Idiom> findIdiomByTime(Timestamp dateTimeStart, Timestamp dateTimeEnd);
 	
 	// U
-	public void updateIdiom(Idiom idiom);
+	public void updateIdiom(int idiomId, String idiom, String definition, String language);
 	
 	// D
 	public void deleteIdiom(int idiomId);
