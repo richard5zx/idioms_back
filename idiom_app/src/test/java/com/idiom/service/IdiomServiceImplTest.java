@@ -1,6 +1,5 @@
 package com.idiom.service;
 
-import java.sql.Timestamp;
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
@@ -42,22 +41,12 @@ public class IdiomServiceImplTest {
 		
 	}
 	
-	@Test // ToDo
-	public void findIdiomByIdiomTest() {
-		
-	}
-	
 	@Test
 	public void findIdiomByLanguageTest() {
 		List<Idiom> list = idiomServiceImpl.findIdiomByLanguage("chn");
 		Idiom idiom = list.get(0);
 		System.out.println("idiom_id:" + idiom.getIdiom_id() + "\tidiom:"+idiom.getIdiom() + "\tdefi:"+idiom.getDefinition()
 		   + "\tlang:"+idiom.getLanguage() + "\tdate:"+idiom.getDate_time());
-		
-	}
-	
-	@Test // ToDo
-	public void findIdiomByTimeTest() {
 		
 	}
 	

@@ -13,34 +13,33 @@ import com.idiom.service.IdiomService;
 @Service
 public class IdiomServiceImpl implements IdiomService {
 	@Autowired
-	IdiomRepository idiomRepsitory;
+	IdiomRepository idiomRepository;
 	
 	// C
 	@Override
 	public void addIdiom(Idiom idiom) {
-		idiomRepsitory.save(idiom);	
+		idiomRepository.save(idiom);	
 	}
 
 	// R
 	@Override
 	public List<Idiom> findAllIdiom() {
-		return idiomRepsitory.findAll();
+		return idiomRepository.findAll();
 	}
 
 	@Override
 	public List<Idiom> findIdiomById(int idiom_id) {
-		return idiomRepsitory.findById(idiom_id);
+		return idiomRepository.findById(idiom_id);
 	}
 
-	@Override // ToDo
+	@Override
 	public List<Idiom> findIdiomByIdiom(String word) {
-		// TODO Auto-generated method stub
-		return null;
+		return idiomRepository.findIdiomByIdiom(word);
 	}
 
 	@Override
 	public List<Idiom> findIdiomByLanguage(String language) {
-		return idiomRepsitory.findByLanguage(language);
+		return idiomRepository.findByLanguage(language);
 	}
 
 	@Override  // ToDo
@@ -52,14 +51,14 @@ public class IdiomServiceImpl implements IdiomService {
 	// U
 	@Override
 	public void updateIdiom(Idiom idiom) {
-		idiomRepsitory.save(idiom);
+		idiomRepository.save(idiom);
 		
 	}
 	
 	// D
 	@Override
 	public void deleteIdiom(int idiom_id) {
-		idiomRepsitory.deleteById(idiom_id);
+		idiomRepository.deleteById(idiom_id);
 		
 	}
 }
