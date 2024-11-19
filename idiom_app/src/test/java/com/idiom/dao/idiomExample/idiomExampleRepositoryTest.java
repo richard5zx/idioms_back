@@ -36,16 +36,14 @@ public class idiomExampleRepositoryTest {
 	// U
 	
 	// D
-	//@Test
+	@Test
 	public void deleteAllIdiomExampleByIdTest() {
 		
 		for (int i = 1; i <= 5; i++) {
-			idiomExampleRepository.save(new IdiomExample(2, "Some idiom2"));	
+			idiomExampleRepository.save(new IdiomExample(8, "Some idiom2"));	
 		}
 		
-		
-		idiomExampleRepository.deleteAllByIdiomId(2);
-		
+		idiomExampleRepository.deleteAllByIdiomId(8);
 	}
-	
+
 }

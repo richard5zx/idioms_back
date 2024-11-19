@@ -22,7 +22,7 @@ import com.idiom.service.impl.IdiomExampleServiceImpl;
 public class IdiomExampleController {
 	@Autowired
 	IdiomExampleServiceImpl idiomExampleServiceImpl;
-	
+
 	// C
 	@PostMapping("createIdiomExample")
 	public String createIdiomExample(@RequestBody IdiomExample idiomExample) {
@@ -45,7 +45,8 @@ public class IdiomExampleController {
 	
 	// D
 	@DeleteMapping("deleteIdiomExample/{exampleId}")
-	public String deleteIdiomExample(@PathVariable("exampleId")int exampleID) {
+	public String deleteIdiomExample(@PathVariable("exampleId") int exampleID) {
+		idiomExampleServiceImpl.deleteIdiomExample(exampleID);
 		return "Example Deleted";
 	}
 }

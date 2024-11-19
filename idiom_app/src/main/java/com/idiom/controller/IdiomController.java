@@ -3,6 +3,7 @@ package com.idiom.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,7 +27,7 @@ public class IdiomController {
 	
 	@Autowired
 	IdiomExampleServiceImpl idiomExampleServiceImpl;
-	
+
 	// C
 	@PostMapping("createIdiom")
 	public String createIdiom(@RequestBody Idiom idiom) {
@@ -53,6 +54,7 @@ public class IdiomController {
 	
 	// D
 	@DeleteMapping("deleteIdiom/{idiomId}")
+	@Transactional
 	public String deleteIdiom(@PathVariable("idiomId") int idiomId) {
 		idiomExampleServiceImpl.deleteAllbyIdiomId(idiomId);
 		idiomServiceImpl.deleteIdiom(idiomId);
