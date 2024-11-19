@@ -1,6 +1,5 @@
 package com.idiom.service.idiomExample;
 
-import java.sql.Timestamp;
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
@@ -19,7 +18,8 @@ public class IdiomExampleServiceImplTest {
 	// C
 	@Test
 	public void addIdiomExampleTest() {
-		
+		IdiomExample idiomExample = new IdiomExample(4, "Some idiom");
+		idiomExampleServiceImpl.addIdiomExample(idiomExample);
 	}
 	
 	// R
@@ -43,14 +43,17 @@ public class IdiomExampleServiceImplTest {
 	}
 	
 	// U
-	@Test
+	//@Test
 	public void updateIdiomExampleTest() {
-		
+		List<IdiomExample> list= idiomExampleServiceImpl.findIdiomExampleByExampleId(1);
+		IdiomExample idiomExample = list.get(0);
+		idiomExample.setExample("newExample");
+		idiomExampleServiceImpl.updateIdiomExample(idiomExample);
 	}
 	
 	// D
-	@Test
+	//@Test
 	public void deleteIdiomExampleTest() {
-		
+		idiomExampleServiceImpl.deleteIdiomExample(4);
 	}
 }

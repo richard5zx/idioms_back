@@ -15,7 +15,7 @@ public interface IdiomRepository extends JpaRepository<Idiom, Integer>{
 	// R
 	List<Idiom> findById(int idiom_id);
 	
-	@Query(value="SELECT * FROM idiom WHERE idiom like %?1%", nativeQuery=true)
+	@Query(value="SELECT * FROM idiom WHERE idiom LIKE %?1%", nativeQuery=true)
 	List<Idiom> findIdiomByIdiom(String idiom);
 	
 	List<Idiom> findByLanguage(String language);
