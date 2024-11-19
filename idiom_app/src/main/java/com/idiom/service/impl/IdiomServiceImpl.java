@@ -42,10 +42,9 @@ public class IdiomServiceImpl implements IdiomService {
 		return idiomRepository.findByLanguage(language);
 	}
 
-	@Override  // ToDo
-	public List<Idiom> findIdiomByTime(Timestamp date_time) {
-		// TODO Auto-generated method stub
-		return null;
+	@Override
+	public List<Idiom> findIdiomByTime(Timestamp dateTimeStart, Timestamp dateTimeEnd) {
+		return idiomRepository.findIdiomByTime(dateTimeStart, dateTimeEnd);
 	}
 
 	// U

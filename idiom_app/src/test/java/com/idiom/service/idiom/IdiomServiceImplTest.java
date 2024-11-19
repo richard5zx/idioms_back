@@ -1,4 +1,4 @@
-package com.idiom.service;
+package com.idiom.service.idiom;
 
 import java.util.List;
 

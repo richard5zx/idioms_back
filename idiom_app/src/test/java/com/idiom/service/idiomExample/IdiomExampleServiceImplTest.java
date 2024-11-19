@@ -1,4 +1,4 @@
-package com.idiom.service;
+package com.idiom.service.idiomExample;
 
 import java.sql.Timestamp;
 import java.util.List;

@@ -14,7 +14,7 @@ public interface IdiomService {
 	public List<Idiom> findIdiomById(int idiom_id);
 	public List<Idiom> findIdiomByIdiom(String word);
 	public List<Idiom> findIdiomByLanguage(String language);
-	public List<Idiom> findIdiomByTime(Timestamp date_time);
+	public List<Idiom> findIdiomByTime(Timestamp dateTimeStart, Timestamp dateTimeEnd);
 	
 	// U
 	public void updateIdiom(Idiom idiom);
