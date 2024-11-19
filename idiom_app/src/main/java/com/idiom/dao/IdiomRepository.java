@@ -1,5 +1,6 @@
 package com.idiom.dao;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -19,8 +20,8 @@ public interface IdiomRepository extends JpaRepository<Idiom, Integer>{
 	
 	List<Idiom> findByLanguage(String language);
 	
-	@Query(value="Select * FROM idiom", nativeQuery=true)
-	List<Idiom> findIdiomByTime(String idiom);
+	@Query(value="Select * FROM idiom WHERE date_time BETWEEN ?1 AND ?2", nativeQuery=true)
+	List<Idiom> findIdiomByTime(Timestamp start, Timestamp end);
 	
 	// U
 	

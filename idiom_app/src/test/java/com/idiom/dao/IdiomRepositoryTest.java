@@ -1,5 +1,6 @@
 package com.idiom.dao;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
@@ -16,18 +17,18 @@ public class IdiomRepositoryTest {
 	// C
 	
 	// R
-	@Test
+	//@Test
 	public void findIdiomByIdiomTest() {
 		List<Idiom> list = idiomRepository.findIdiomByIdiom("idio");
 		System.out.println(list.size());
 	}
 	
-	//Test
+	//@Test
 	public void findIdiomByTimeTest() {
-		List<Idiom> list = idiomRepository.findIdiomByTime(null);
-		Idiom idiom = list.get(0);
-		System.out.println("idiom_id:" + idiom.getIdiom_id() + "\tidiom:"+idiom.getIdiom() + "\tdefi:"+idiom.getDefinition()
-		   + "\tlang:"+idiom.getLanguage() + "\tdate:"+idiom.getDate_time());
+		Timestamp start = Timestamp.valueOf("2024-11-13 23:51:33");
+		Timestamp end = Timestamp.valueOf("2024-11-13 23:54:00");
+		List<Idiom> list = idiomRepository.findIdiomByTime(start, end);
+		System.out.println(list.size());
 	}
 	
 	// U
