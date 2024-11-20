@@ -15,20 +15,51 @@ Frontend: Node.js, Vue.js, JavaScript, HTML, CSS
 
 ## Demo
 
-## How to run the application
-### Node.js setup
+
+## How to run the backend application
+### Database setup
 Open up MySQL\
-Create Node.js folder and enter folder
+Create a database in MySQL
 ```script
-mysql> 
+mysql> CREATE DATABASE idioim;
 ```
 
-Install dependencies
+Check if database is created using
 ```script
 mysql> show databases;
 ```
 
-Run the server
+Enter todolist database
 ```script
-mysql>
+mysql> USE idiom
+```
+
+Create idiom and idiom_example table in the idiom database
+```script
+mysql> CREATE TABLE idiom (
+    idiom_id int NOT NULL AUTO_INCREMENT,
+    idiom varchar(255) NOT NULL,
+    definition varchar(255),
+    language varchar(100),
+    date_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (idiom_id)
+);
+```
+
+Create idiom_example table in the idiom database
+```script
+mysql> CREATE TABLE idiom_example (
+    example_id int NOT NULL AUTO_INCREMENT,
+    idiom_id int,
+    example varchar(255),
+    date_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (example_id),
+    FOREIGN KEY (idiom_id) REFERENCES idiom(idiom_id)
+);
+```
+
+Check details of table
+```script
+mysql> DESCRIBE idiom;
+mysql> DESCRIBE idiom_example;
 ```
