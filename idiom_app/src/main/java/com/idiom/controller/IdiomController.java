@@ -42,9 +42,16 @@ public class IdiomController {
 	}
 	
 	// U
-	@PutMapping("updateIdiom")
-	public String updateIdiom(@RequestBody Idiom idiom) {
-		idiomServiceImpl.updateIdiom(idiom.getIdiomId(), idiom.getIdiom(), idiom.getDefinition(), idiom.getLanguage());
+	@PutMapping("updateIdiom/{idiom_id}/{idiom}/{description}/{language}")
+	public String updateIdiom(
+			@PathVariable("idiom_id") String idiom_id,
+			@PathVariable("idiom") String idiom,
+			@PathVariable("description") String description,
+			@PathVariable("language") String language
+			) 
+	{
+		int idiom_id_in_int = Integer.parseInt(idiom_id);
+		idiomServiceImpl.updateIdiom(idiom_id_in_int, idiom, description, language);
 		return "Idiom Updated";
 	}
 	
