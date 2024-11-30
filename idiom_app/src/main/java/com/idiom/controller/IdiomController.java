@@ -44,10 +44,6 @@ public class IdiomController {
 	// U
 	@PutMapping("updateIdiom")
 	public String updateIdiom(@RequestBody Idiom idiom) {
-		System.out.println(idiom.getLanguage());
-		System.out.println(idiom.getDefinition());
-		System.out.println(idiom.getIdiom());
-		System.out.println(idiom.getIdiomId());
 		idiomServiceImpl.updateIdiom(idiom.getIdiomId(), idiom.getIdiom(), idiom.getDefinition(), idiom.getLanguage());
 		return "Idiom Updated";
 	}

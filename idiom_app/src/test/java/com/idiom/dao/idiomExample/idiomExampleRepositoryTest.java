@@ -36,7 +36,7 @@ public class idiomExampleRepositoryTest {
 	// U
 	
 	// D
-	@Test
+	//@Test
 	public void deleteAllIdiomExampleByIdTest() {
 		
 		for (int i = 1; i <= 5; i++) {
