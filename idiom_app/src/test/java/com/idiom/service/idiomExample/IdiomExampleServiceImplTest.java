@@ -17,8 +17,16 @@ public class IdiomExampleServiceImplTest {
 	// C
 	//@Test
 	public void addIdiomExampleTest() {
-		IdiomExample idiomExample = new IdiomExample(4, "Some idiom");
+		IdiomExample idiomExample = new IdiomExample(1, "idiom0");
 		idiomExampleServiceImpl.addIdiomExample(idiomExample);
+		IdiomExample idiomExample1 = new IdiomExample(1, "idiom1");
+		idiomExampleServiceImpl.addIdiomExample(idiomExample1);
+		IdiomExample idiomExample2 = new IdiomExample(1, "idiom2");
+		idiomExampleServiceImpl.addIdiomExample(idiomExample2);
+		IdiomExample idiomExample3 = new IdiomExample(1, "idiom3");
+		idiomExampleServiceImpl.addIdiomExample(idiomExample3);
+		IdiomExample idiomExample4 = new IdiomExample(1, "idiom4");
+		idiomExampleServiceImpl.addIdiomExample(idiomExample4);
 	}
 	
 	// R

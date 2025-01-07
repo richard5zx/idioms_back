@@ -36,6 +36,7 @@ public class IdiomExampleController {
 		return idiomExampleServiceImpl.findAllIdiomExample();
 	}
 	
+	
 	// U
 	@PutMapping("updateIdiomExample")
 	public String updateIdiom(@RequestBody IdiomExample idiomExample) {

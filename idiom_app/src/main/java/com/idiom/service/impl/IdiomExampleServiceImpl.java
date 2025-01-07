@@ -32,6 +32,11 @@ public class IdiomExampleServiceImpl implements IdiomExampleService {
 	public List<IdiomExample> findIdiomExampleByExampleId(int exampleId) {
 		return idiomExampleRepository.findById(exampleId);
 	}
+	
+	@Override
+	public List<IdiomExample> findIdiomExampleByIdiomId(int idiomId) {
+		return idiomExampleRepository.findExampleByIdiomId(idiomId);
+	}
 
 	@Override
 	public List<IdiomExample> findIdiomExampleByExample(String example) {

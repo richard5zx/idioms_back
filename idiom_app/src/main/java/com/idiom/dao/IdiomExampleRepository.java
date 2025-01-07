@@ -24,6 +24,9 @@ public interface IdiomExampleRepository extends JpaRepository<IdiomExample, Inte
 	@Query(value="SELECT * FROM idiom_example WHERE date_time BETWEEN ?1 AND ?2", nativeQuery=true)
 	public List<IdiomExample> findExampleByTime(Timestamp dateTimeStart, Timestamp dateTimeEnd);
 	
+	@Query(value="SELECT * FROM idiom_example WHERE idiom_id = ?1", nativeQuery=true)
+	public List<IdiomExample> findExampleByIdiomId(int idiomId);
+	
 	// U
 	
 	// D

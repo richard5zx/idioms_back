@@ -33,6 +33,12 @@ public class idiomExampleRepositoryTest {
 		System.out.println(list.size());
 	}
 	
+	//@Test
+	public void findExampleByIdiomIdTest() {
+		List<IdiomExample> list = idiomExampleRepository.findExampleByIdiomId(1);
+		System.out.println(list.size());
+	}
+	
 	// U
 	
 	// D
