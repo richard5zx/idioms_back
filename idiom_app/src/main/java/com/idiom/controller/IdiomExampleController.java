@@ -36,6 +36,11 @@ public class IdiomExampleController {
 		return idiomExampleServiceImpl.findAllIdiomExample();
 	}
 	
+	@GetMapping("getIdiomExampleByIdiomId/{idiomId}")
+	public List<IdiomExample> getIdiomExampleByIdiomId(@PathVariable("idiomId") int idiomId) {
+		return idiomExampleServiceImpl.findIdiomExampleByIdiomId(idiomId);
+	}
+	
 	
 	// U
 	@PutMapping("updateIdiomExample")
