@@ -41,17 +41,25 @@ public class IdiomController {
 		return idiomServiceImpl.findAllIdiom();
 	}
 	
+	@GetMapping("getIdiomByIdiomId/{idiomId}")
+	public String getIdiomByIdiomId(@PathVariable("idiomId") String idiomId) {
+		int idiomIdInInt = Integer.parseInt(idiomId);
+		String idiom = idiomServiceImpl.findIdiomByIdiomId(idiomIdInInt);
+		System.out.println(idiom);
+		return idiom;
+	}
+	
 	// U
-	@PutMapping("updateIdiom/{idiom_id}/{idiom}/{description}/{language}")
+	@PutMapping("updateIdiom/{idiomId}/{idiom}/{description}/{language}")
 	public String updateIdiom(
-			@PathVariable("idiom_id") String idiom_id,
+			@PathVariable("idiomId") String idiomId,
 			@PathVariable("idiom") String idiom,
 			@PathVariable("description") String description,
 			@PathVariable("language") String language
 			) 
 	{
-		int idiom_id_in_int = Integer.parseInt(idiom_id);
-		idiomServiceImpl.updateIdiom(idiom_id_in_int, idiom, description, language);
+		int idiomIdInInt = Integer.parseInt(idiomId);
+		idiomServiceImpl.updateIdiom(idiomIdInInt, idiom, description, language);
 		return "Idiom Updated";
 	}
 	

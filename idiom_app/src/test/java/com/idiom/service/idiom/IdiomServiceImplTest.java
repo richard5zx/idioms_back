@@ -32,12 +32,10 @@ public class IdiomServiceImplTest {
 		}
 	}
 	
-	//@Test
+	@Test
 	public void findIdiomByIdTest() {
-		List<Idiom> list = idiomServiceImpl.findIdiomById(1);
-		Idiom idiom = list.get(0);
-		System.out.println("idiom_id:" + idiom.getIdiomId() + "\tidiom:"+idiom.getIdiom() + "\tdefi:"+idiom.getDefinition()
-		   + "\tlang:"+idiom.getLanguage() + "\tdate:"+idiom.getDateTime());
+		String idiom = idiomServiceImpl.findIdiomByIdiomId(1);
+		System.out.println(idiom);
 		
 	}
 	

@@ -5,12 +5,14 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import com.idiom.dao.IdiomRepository;
 import com.idiom.model.Idiom;
 import com.idiom.service.IdiomService;
 
 @Service
+@CrossOrigin
 public class IdiomServiceImpl implements IdiomService {
 	@Autowired
 	IdiomRepository idiomRepository;
@@ -28,10 +30,12 @@ public class IdiomServiceImpl implements IdiomService {
 	}
 
 	@Override
-	public List<Idiom> findIdiomById(int idiomId) {
-		return idiomRepository.findById(idiomId);
+	public String findIdiomByIdiomId(int idiomId) {
+		List<Idiom> list = idiomRepository.findById(idiomId); 
+		String idiom = list.get(0).getIdiom(); 
+		return idiom;
 	}
-
+	
 	@Override
 	public List<Idiom> findIdiomByIdiom(String word) {
 		return idiomRepository.findIdiomByIdiom(word);
