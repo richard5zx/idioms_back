@@ -17,16 +17,21 @@ public class idiomExampleRepositoryTest {
 	IdiomExampleRepository idiomExampleRepository;
 	
 	// C
+	@Test
+	public void createIdiomExampleTest() {
+		idiomExampleRepository.createIdiomExample(6, "形容心情非常高興快活");
+		System.out.println("Success");
+	}
 	
 	// R
 	//@Test
-	public void findExampleByExampleTest( ) {
+	public void findExampleByExampleTest() {
 		List<IdiomExample> list = idiomExampleRepository.findExampleByExample("m");
 		System.out.println(list.size());
 	}
 	
 	//@Test
-	public void findExampleByTimeTest( ) {
+	public void findExampleByTimeTest() {
 		Timestamp timeStart = Timestamp.valueOf("2024-11-19 17:03:02");
 		Timestamp timeEnd = Timestamp.valueOf("2024-11-19 17:10:44");
 		List<IdiomExample> list = idiomExampleRepository.findExampleByTime(timeStart, timeEnd);

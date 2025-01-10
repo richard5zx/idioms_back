@@ -14,6 +14,10 @@ import com.idiom.model.IdiomExample;
 public interface IdiomExampleRepository extends JpaRepository<IdiomExample, Integer> {
 	
 	// C
+	@Modifying
+	@Transactional
+	@Query(value="INSERT INTO idiom_example (idiom_id, example) VALUES(?1, ?2)", nativeQuery=true)
+	public void createIdiomExample(int idiomId, String example);
 	
 	// R
 	List<IdiomExample> findById(int example_id);
