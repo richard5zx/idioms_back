@@ -41,12 +41,11 @@ public class IdiomExampleController {
 		return idiomExampleServiceImpl.findIdiomExampleByIdiomId(idiomId);
 	}
 	
-	
 	// U
 	@PutMapping("updateIdiomExample")
 	public String updateIdiom(@RequestBody IdiomExample idiomExample) {
 		idiomExampleServiceImpl.updateIdiomExample(idiomExample.getExampleId(), idiomExample.getExample());
-		return "Example Update";
+		return "Example Updated";
 	}
 	
 	// D

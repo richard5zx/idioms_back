@@ -45,7 +45,6 @@ public class IdiomController {
 	public String getIdiomByIdiomId(@PathVariable("idiomId") String idiomId) {
 		int idiomIdInInt = Integer.parseInt(idiomId);
 		String idiom = idiomServiceImpl.findIdiomByIdiomId(idiomIdInInt);
-		System.out.println(idiom);
 		return idiom;
 	}
 	

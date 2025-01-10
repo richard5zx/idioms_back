@@ -6,12 +6,14 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import com.idiom.dao.IdiomExampleRepository;
 import com.idiom.model.IdiomExample;
 import com.idiom.service.IdiomExampleService;
 
 @Service
+@CrossOrigin
 public class IdiomExampleServiceImpl implements IdiomExampleService {
 	@Autowired
 	IdiomExampleRepository idiomExampleRepository;
