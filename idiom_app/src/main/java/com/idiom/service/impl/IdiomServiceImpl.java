@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import com.idiom.dao.IdiomRepository;
 import com.idiom.model.Idiom;
 import com.idiom.service.IdiomService;
+import com.idiom.service.ServiceException;
 
 @Service
 @CrossOrigin
@@ -30,10 +31,33 @@ public class IdiomServiceImpl implements IdiomService {
 	}
 
 	@Override
-	public String findIdiomByIdiomId(int idiomId) {
-		List<Idiom> list = idiomRepository.findById(idiomId); 
-		String idiom = list.get(0).getIdiom(); 
-		return idiom;
+	public String findIdiomByIdiomId(int idiomId) throws ServiceException {
+		try {
+			if (idiomId < 1) {
+				throw new ServiceException("idiomId doesn't exist");
+			} else {
+				List<Idiom> list = idiomRepository.findById(idiomId); 
+				String idiom = list.get(0).getIdiom(); 
+				return idiom;
+			}
+		} catch (ServiceException serviceException) {
+			throw new ServiceException("idiomId doesn't exists");
+		}
+	}
+	
+	@Override
+	public String findDefinitionByIdiomId(int idiomId) throws ServiceException {
+		try {
+			if (idiomId < 1) {
+				throw new ServiceException("idiomId doesn't exist");
+			} else {
+				List<Idiom> list = idiomRepository.findById(idiomId); 
+				String definition = list.get(0).getDefinition();
+				return definition;
+			}
+		} catch (ServiceException serviceException) {
+			throw new ServiceException("idiomId doesn't exists");
+		}
 	}
 	
 	@Override

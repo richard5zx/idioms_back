@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.idiom.model.Idiom;
+import com.idiom.service.ServiceException;
 import com.idiom.service.impl.IdiomExampleServiceImpl;
 import com.idiom.service.impl.IdiomServiceImpl;
 
@@ -42,9 +43,16 @@ public class IdiomController {
 	}
 	
 	@GetMapping("getIdiomByIdiomId/{idiomId}")
-	public String getIdiomByIdiomId(@PathVariable("idiomId") String idiomId) {
+	public String getIdiomByIdiomId(@PathVariable("idiomId") String idiomId) throws ServiceException {
 		int idiomIdInInt = Integer.parseInt(idiomId);
 		String idiom = idiomServiceImpl.findIdiomByIdiomId(idiomIdInInt);
+		return idiom;
+	}
+	
+	@GetMapping("getDefinitionByIdiomId/{idiomId}")
+	public String getDefinitionByIdiomId(@PathVariable("idiomId") String idiomId) throws ServiceException {
+		int idiomIdInInt = Integer.parseInt(idiomId);
+		String idiom = idiomServiceImpl.findDefinitionByIdiomId(idiomIdInInt);
 		return idiom;
 	}
 	

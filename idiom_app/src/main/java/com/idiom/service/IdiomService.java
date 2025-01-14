@@ -11,7 +11,8 @@ public interface IdiomService {
 	
 	// R
 	public List<Idiom> findAllIdiom();
-	public String findIdiomByIdiomId(int idiomId);
+	public String findIdiomByIdiomId(int idiomId) throws ServiceException;
+	public String findDefinitionByIdiomId(int idiomId) throws ServiceException;
 	public List<Idiom> findIdiomByIdiom(String word);
 	public List<Idiom> findIdiomByLanguage(String language);
 	public List<Idiom> findIdiomByTime(Timestamp dateTimeStart, Timestamp dateTimeEnd);

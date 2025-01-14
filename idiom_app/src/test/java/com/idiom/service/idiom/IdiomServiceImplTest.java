@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import com.idiom.model.Idiom;
+import com.idiom.service.ServiceException;
 import com.idiom.service.impl.IdiomServiceImpl;
 
 @SpringBootTest
@@ -33,7 +34,7 @@ public class IdiomServiceImplTest {
 	}
 	
 	@Test
-	public void findIdiomByIdTest() {
+	public void findIdiomByIdTest() throws ServiceException {
 		String idiom = idiomServiceImpl.findIdiomByIdiomId(1);
 		System.out.println(idiom);
 		
