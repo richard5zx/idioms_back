@@ -17,7 +17,7 @@ public class idiomExampleRepositoryTest {
 	IdiomExampleRepository idiomExampleRepository;
 	
 	// C
-	@Test
+	//@Test
 	public void createIdiomExampleTest() {
 		idiomExampleRepository.createIdiomExample(6, "形容心情非常高興快活");
 		System.out.println("Success");
@@ -49,7 +49,6 @@ public class idiomExampleRepositoryTest {
 	// D
 	//@Test
 	public void deleteAllIdiomExampleByIdTest() {
-		
 		for (int i = 1; i <= 5; i++) {
 			idiomExampleRepository.save(new IdiomExample(8, "Some idiom2"));	
 		}

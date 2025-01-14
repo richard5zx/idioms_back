@@ -21,7 +21,7 @@ public class IdiomExampleServiceImpl implements IdiomExampleService {
 	// C
 	@Override
 	public void addIdiomExample(IdiomExample idiomExample) {
-		idiomExampleRepository.save(idiomExample);
+		idiomExampleRepository.createIdiomExample(idiomExample.getIdiomId(), idiomExample.getExample());
 	}
 
 	// R
