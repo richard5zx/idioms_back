@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
-import com.idiom.dao.IdiomRepository;
+import com.idiom.repository.IdiomRepository;
 import com.idiom.model.Idiom;
 import com.idiom.service.IdiomService;
 import com.idiom.service.ServiceException;

@@ -1,4 +1,4 @@
-package com.idiom.dao;
+package com.idiom.repository;
 
 import java.sql.Timestamp;
 import java.util.List;

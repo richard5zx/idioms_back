@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.idiom.dao.IdiomExampleRepository;
+import com.idiom.repository.IdiomExampleRepository;
 import com.idiom.model.IdiomExample;
 
 @SpringBootTest
